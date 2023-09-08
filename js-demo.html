@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightgreen;
+        }
+        main {
+            background-color: lightcyan;
+            padding: 15px; /* Empty space inside the box */
+            margin: auto; /*Empty space around the box */
+            text-align: center;
+            width: 425px;
+        }
+        button {
+            margin: 30px;
+        }
+        #amount {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Street Cat Rescue</h1>
+        <img src="https://img2.finalfantasyxiv.com/accimg2/81/9e/819eef1260f7d614999acda71319bead06acb117_400_400.jpg" alt="">
+        <p>This floppy cat is in desperate need of food</p>
+        <input type="text" id="amount">
+        <div>
+            <button>Click to help this floppy cat</button>
+        </div>
+    </main>
+
+    <script>
+        const button = document.querySelector("button")
+        const input = document.querySelector("input")
+
+        function handleDonation(){
+            const amount = input.value
+
+            if (amount == 0) {
+                document.body.style.backgroundImage = "url(https://i.redd.it/vthvmqg9di971.jpg)"
+                alert("Cat is dissapointed")
+            } else {
+                document.body.style.backgroundImage = "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPXj-liK9b-_BZ-xGYQ_nRdeepv9SEXnpxGA_u75pUuBIh9N25gmkroHs8VL0Uhr2drzs&usqp=CAU)"
+                location.href = "https://duckduckgo.com/?q=happiest+cats&iar=images&iax=images&ia=images" + amount
+            }
+        }
+
+        button.addEventListener("click", handleDonation)
+    </script>
+</body>
+</html>
